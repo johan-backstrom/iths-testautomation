@@ -1,4 +1,4 @@
-package junit;
+package junit.lab;
 
 public class Calculator {
 
@@ -22,15 +22,7 @@ public class Calculator {
 		return number1 / number2;
 	}
 
-	public String reverse(String original)
-	{
-		String reverse = "";
-		int length = original.length();
-		for ( int i = length - 1 ; i >= 0 ; i-- )
-	    {
-			reverse = reverse + original.charAt(i);
-	    }
-		return reverse;
-
-	}
+	public double percent(int number1, int asPercentageOf){
+	    return 100 * (double)number1 / asPercentageOf;
+    }
 }
