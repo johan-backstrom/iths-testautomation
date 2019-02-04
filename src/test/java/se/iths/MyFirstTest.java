@@ -4,6 +4,10 @@ import junit.lab.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MyFirstTest {
 
     Calculator myCalculator = new Calculator();
