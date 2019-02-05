@@ -1,16 +1,33 @@
 package se.iths;
 
 import junit.lab.Calculator;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 public class MyFirstTest {
 
-    Calculator myCalculator = new Calculator();
+    Calculator myCalculator;
+
+    @Before
+    public void setUp() {
+        System.out.println("Creating new calculator...");
+        myCalculator = new Calculator();
+    }
+
+    @After
+    public void tearDown() {
+        System.out.println("Do some cleanup...");
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testException() throws Exception {
+        throw new RuntimeException("Apa!");
+    }
 
     @Test
     public void addPositiveNumbers() {
@@ -45,11 +62,8 @@ public class MyFirstTest {
 
     @Test
     public void percentageOfNegativeNumber() {
-        Assert.assertEquals(
-                -200,
-                myCalculator.percent(50, -25),
-                0
-        );
+
+        assertThat(myCalculator.percent(50,-25), is(-200));
     }
 
     @Test
@@ -60,27 +74,19 @@ public class MyFirstTest {
         );
 
         Assert.assertTrue(
-            isInfinite
+                isInfinite
         );
     }
 
-    @Test
-    public void divisionByZero(){
+    @Test(expected = ArithmeticException.class)
+    public void divisionByZero() {
 
-        try {
-            myCalculator.divide(100, 0);
-        } catch (ArithmeticException e){
-            return;
-        }
+        myCalculator.divide(100, 0);
 
-        Assert.fail();
     }
 
     @Test
-    public void divisionByNegative(){
-        Assert.assertEquals(
-                -2,
-                myCalculator.divide(4, -2)
-        );
+    public void divisionByNegative() {
+        assertThat(myCalculator.divide(4, -2), is(-2));
     }
 }

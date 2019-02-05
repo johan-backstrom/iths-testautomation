@@ -14,8 +14,23 @@ public class Vehicle {
         this.yearOfManufacturing = yearOfManufacturing;
     }
 
-    public int calculateVehicleValue(){
-        return 0;
+    public int calculatePrice(){
+
+        // First requirement
+        int price = newPrice * 9 / 10;
+
+        // Second requirement
+        double reduction = Math.pow(
+                (double)8/10,
+                2019 - yearOfManufacturing
+        );
+        price = (int)(price * reduction);
+
+        // Third requirement
+
+
+        // Finished
+        return price;
     }
 
     public enum Condition{
