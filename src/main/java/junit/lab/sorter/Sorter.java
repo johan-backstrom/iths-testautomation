@@ -1,6 +1,22 @@
 package junit.lab.sorter;
 
+import java.util.Arrays;
+
 public class Sorter {
+
+    public int[] onlyEven(int[] numbers){
+
+        int[] even = new int[numbers.length];
+        int numberOfEvenNumbers = 0;
+
+        for (int i = 0; i < numbers.length; i++){
+            if(numbers[i]%2 == 0){
+                even[numberOfEvenNumbers] = numbers[i];
+                numberOfEvenNumbers++;
+            }
+        }
+        return Arrays.copyOf(even, numberOfEvenNumbers);
+    }
 
     public int[] sort(int[] numbers){
         sort(numbers, 0, numbers.length -1);
