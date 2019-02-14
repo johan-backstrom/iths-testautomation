@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import se.iths.selenium.pages.DownloadPage;
 import se.iths.selenium.pages.TopMenu;
 
 public class SeleniumHqTest {
@@ -47,11 +48,12 @@ public class SeleniumHqTest {
         TopMenu topMenu = new TopMenu(chrome);
         topMenu.clickDownloadTab();
 
-        WebElement versionText = chrome.findElement(By.xpath("//*[@id=\"mainContent\"]/p[3]/a"));
+        DownloadPage downloadPage = new DownloadPage(chrome);
+        Version version = downloadPage.getVersion();
 
         Assert.assertEquals(
-                "3.141.XX",
-                versionText.getText()
+                "3.141.59",
+                version.toString()
         );
     }
 

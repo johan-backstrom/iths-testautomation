@@ -8,13 +8,15 @@ public class TopMenu {
 
     WebDriver driver;
 
+    By downloadLinkIdentifier = By.xpath("//*[@id=\"menu_download\"]/a");
+
     public TopMenu(WebDriver driver){
         this.driver = driver;
     }
 
     public void clickDownloadTab(){
 
-        WebElement downloadLink = driver.findElement(By.xpath("//*[@id=\"menu_download\"]/a"));
+        WebElement downloadLink = driver.findElement(downloadLinkIdentifier);
         downloadLink.click();
     }
 
