@@ -1,6 +1,5 @@
-package se.iths.selenium.pages;
+package se.iths.selenium.pages.webshop;
 
-import junit.lab.atm.AutomaticTellerMachine;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

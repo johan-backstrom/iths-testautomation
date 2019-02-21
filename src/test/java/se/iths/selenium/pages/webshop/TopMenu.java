@@ -1,4 +1,4 @@
-package se.iths.selenium.pages;
+package se.iths.selenium.pages.webshop;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

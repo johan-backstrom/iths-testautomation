@@ -1,4 +1,4 @@
-package se.iths.selenium.pages;
+package se.iths.selenium.pages.webshop;
 
 public class User {
 
