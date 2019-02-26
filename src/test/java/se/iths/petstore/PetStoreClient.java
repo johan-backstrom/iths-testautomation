@@ -11,6 +11,20 @@ public class PetStoreClient {
 
     ObjectMapper mapper = new ObjectMapper();
 
+    public void deletePet(int id){
+
+        try {
+            HttpResponse<String> deleteRsponse = Unirest.delete("http://petstore.swagger.io/v2/pet/" + id).asString();
+
+            Assert.assertEquals(
+                    200,
+                    deleteRsponse.getStatus()
+            );
+        } catch(Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
     public void createPet(Pet myPet){
 
         try {
