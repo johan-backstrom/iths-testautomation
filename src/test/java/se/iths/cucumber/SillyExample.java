@@ -1,6 +1,5 @@
 package se.iths.cucumber;
 
-import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -12,11 +11,6 @@ import se.iths.petstore.PetStoreClient;
 import java.util.List;
 
 public class SillyExample {
-
-    @Before
-    public void setup(){
-        System.out.println("Apa!");
-    }
 
     @Given("^I have a cucumber$")
     public void i_have_a_cucumber() throws Throwable {
@@ -66,8 +60,8 @@ public class SillyExample {
     }
 
 
-    @Given("^the following pet$")
-    public void the_following_pet(List<Pet> arg1) throws Throwable {
+    @Given("^the following pets$")
+    public void the_following_pets(List<Pet> arg1) throws Throwable {
         System.out.println(arg1);
         new PetStoreClient().createPet(arg1.get(0));
     }
