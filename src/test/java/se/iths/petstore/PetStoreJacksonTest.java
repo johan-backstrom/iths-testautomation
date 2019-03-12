@@ -1,10 +1,5 @@
 package se.iths.petstore;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.junit.Assert;
 import org.junit.Test;
@@ -53,7 +48,8 @@ public class PetStoreJacksonTest {
         Assert.assertEquals(
                 "Fido",
                 client.getPet(123456).getName()
-        );;
+        );
+        ;
 
 
         client.deletePet(123456);
@@ -61,4 +57,23 @@ public class PetStoreJacksonTest {
         client.getPet(123456, 404);
     }
 
+    @Test
+    public void logInWithCorrectCredentials() {
+
+        User user = new User(
+                123456,
+                "my-user",
+                "johan",
+                "baxter",
+                "apa@test.com",
+                "pass",
+                "0701234567",
+                0
+        );
+        client.createUser(user);
+
+        Assert.assertTrue(
+                client.logIn("my-user", "pass")
+        );
+    }
 }

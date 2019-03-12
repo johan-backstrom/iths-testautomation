@@ -16,22 +16,43 @@ public class Vehicle {
 
     public int calculatePrice(){
 
-        // First requirement
+        // Initial reduction requirement
         int price = newPrice * 9 / 10;
 
-        // Second requirement
+        // Age requirement
         double reduction = Math.pow(
                 (double)8/10,
                 2019 - yearOfManufacturing
         );
         price = (int)(price * reduction);
 
-        // Third requirement
+        // Condition requirement
+        switch(condition){
+            case used:
+                price -= 1000;
+                break;
+            case crap:
+                price -= 2000;
+                break;
+        }
 
+        // Brand requirement
+        switch(make){
+            case "Ferrari":
+                price += 20000;
+                break;
+            case "Lamborghini":
+                price += 10000;
+                break;
+        }
+
+        // never less than 0
+        price = price < 0 ? 0 : price;
 
         // Finished
         return price;
     }
+
 
     public enum Condition{
         mint,
