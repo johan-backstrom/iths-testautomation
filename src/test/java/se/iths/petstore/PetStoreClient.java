@@ -140,5 +140,4 @@ public class PetStoreClient {
             throw new RuntimeException(e);
         }
     }
-
 }

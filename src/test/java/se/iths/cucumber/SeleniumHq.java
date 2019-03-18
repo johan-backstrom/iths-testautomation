@@ -1,14 +1,11 @@
 package se.iths.cucumber;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import se.iths.petstore.PetStoreClient;
 
 public class SeleniumHq {
 

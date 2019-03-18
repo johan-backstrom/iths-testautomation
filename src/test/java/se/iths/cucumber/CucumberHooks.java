@@ -13,7 +13,7 @@ public class CucumberHooks {
     }
 
     @Before
-    public void setup2(){
+    public void setup(){
         world = new CucumberWorld();
         world.setDriver(new ChromeDriver());
     }

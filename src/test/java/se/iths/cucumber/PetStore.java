@@ -29,8 +29,12 @@ public class PetStore {
 
         new PetStoreClient().deletePet(petId);
 
-        List<Pet> myPets = new PetStoreClient().getPetsByStatus("pending");
-        CucumberHooks.getWorld().setPetresponseList(myPets);
+        List<Pet> myPets = new PetStoreClient()
+                .getPetsByStatus("pending");
+
+        CucumberHooks
+                .getWorld()
+                .setPetresponseList(myPets);
 
     }
 
